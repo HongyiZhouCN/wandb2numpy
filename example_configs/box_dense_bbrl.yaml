@@ -4,12 +4,16 @@
 experiment1:
   fields: ["evaluation_is_success_mean", "num_global_steps"]
   entity: gelikit
-  project: box_dense_bbrl_entire
-#  project: box_dense_tcp_entire
+#  project: box_dense_bbrl_entire
+  project: box_random_bbrl_entire
 
   config:
     sampler.args.env_id:
-          values: ["BoxPushingDenseProDMP-v0"]
-#  groups: ["BBRL, new bp reward setting"]
-  groups: ["BBRL, 20 seeds"]
+          values: ["BoxPushingRandomInitDenseProDMP-v0"]
+    sampler.args.episodes_per_train_env:
+      values: [ 5 ]
+    policy.args.variance_net_args.std_only:
+      values: [false]
+  groups: ["BBRL, EF obs, 76 + 304ep"]
+#  groups: ["BBRL, 20 seeds"]
   output_path: /home/lige/Codes/wandb2numpy/wandb_data/box_dense_bbrl_prodmp
