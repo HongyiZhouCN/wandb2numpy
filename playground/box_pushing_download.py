@@ -7,8 +7,8 @@ if __name__=="__main__":
 
     method = "bbrl"
     # method = "tcp"
-    # case = "dense"
-    case = "temporal_sparse"
+    case = "dense"
+    # case = "temporal_sparse"
 
     default_config = f"/home/lige/Codes/wandb2numpy/example_configs/box_{case}_{method}.yaml"
 

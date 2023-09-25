@@ -84,8 +84,8 @@ def draw_box_pushing_iqm(is_success, simulation_steps, algorithm, method, case):
 if __name__ == "__main__":
     method = "bbrl"
     # method = "tcp"
-    # case = "dense"
-    case = "temporal_sparse"
+    case = "dense"
+    # case = "temporal_sparse"
 
     is_success, simulation_steps = read_box_dense_world_data(f"/home/lige/Codes/wandb2numpy/wandb_data/box_{case}_{method}_prodmp")
 
