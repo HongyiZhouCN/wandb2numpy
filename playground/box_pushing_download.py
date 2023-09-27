@@ -5,10 +5,10 @@ from wandb2numpy.save_experiment import create_output_dirs, save_matrix
 
 if __name__=="__main__":
 
-    method = "bbrl"
-    # method = "tcp"
-    case = "dense"
-    # case = "temporal_sparse"
+    # method = "bbrl"
+    method = "tcp"
+    # case = "dense"
+    case = "temporal_sparse"
 
     default_config = f"/home/lige/Codes/wandb2numpy/example_configs/box_{case}_{method}.yaml"
 
