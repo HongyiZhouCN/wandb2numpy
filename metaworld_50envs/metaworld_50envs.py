@@ -67,7 +67,7 @@ env_id = [
 ]
 
 COLOR_TCP = "1f77b4"  # % Blue, TCP
-COLOR_BBRL = "ff7f0e"  # % Orange, BBRL
+COLOR_BBRL = "17becf"  # % Cyan, BBRL
 COLOR_PPO = "2ca02c"  # % Green, PPO
 COLOR_TRPL = "d62728"  # % Red, TRPL
 COLOR_SAC = "9467bd"  # % Purple, SAC

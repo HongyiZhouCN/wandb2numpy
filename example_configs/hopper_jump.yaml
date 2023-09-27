@@ -1,0 +1,17 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+
+#  fields: ["evaluation_max_height_mean"]
+  fields: ["evaluation_goal_dist_mean"]
+#  fields: ["evaluation_episode_reward_mean"]
+#  fields: ["num_global_steps"]
+  entity: gelikit
+  project: hopper_jump_tcp
+
+  config:
+    policy.args.variance_net_args.std_only:
+      values: [false]
+  groups: ["Sparse, remove cost after left floor, 20seeds, cpu"]
+  output_path: /home/lige/Codes/wandb2numpy/wandb_data/hopper_jump_tcp

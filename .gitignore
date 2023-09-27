@@ -4,3 +4,7 @@ wandb_data/
 **/__pycache__/
 *egg-info/
 *.tex
+/metaworld_50envs/plots_50/
+/metaworld_50envs/meta_pink/
+/metaworld_50envs/metaworld_bbrl_prodmp/
+/metaworld_50envs/metaworld_tcp_prodmp/
