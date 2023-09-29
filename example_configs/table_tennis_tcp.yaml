@@ -11,9 +11,9 @@ experiment1:
   project: table_tennis_4d_tcp
 
 
-  config:
-    sampler.args.env_id:
-      values: [ "TableTennis4DProDMPTCP-v0" ]
+#  config:
+#    sampler.args.env_id:
+#      values: [ "TableTennis4DProDMPTCP-v0" ]
 
-  groups: [ "TCP, 20 seeds" ]
+  groups: [ "TCP, TT final, 20 seeds" ]
   output_path: /home/lige/Codes/wandb2numpy/wandb_data/table_tennis_tcp_prodmp

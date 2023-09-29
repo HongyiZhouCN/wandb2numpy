@@ -180,20 +180,20 @@ def draw_ep_reward_iqm(ep_reward, simulation_steps, algorithm):
 
 
 if __name__ == "__main__":
-    is_success, ep_reward, simulation_steps = read_meta_world_data(
-        "/home/lige/Codes/wandb2numpy/wandb_data/metaworld_tcp_prodmp")
-    # is_success, ep_reward, simulation_steps = read_meta_world_data("/home/lige/Codes/wandb2numpy/wandb_data/metaworld_bbrl_prodmp")
-
+    # is_success, ep_reward, simulation_steps = read_meta_world_data(
+    #     "/home/lige/Codes/wandb2numpy/wandb_data/metaworld_tcp_prodmp")
+    is_success, ep_reward, simulation_steps = read_meta_world_data("/home/lige/Codes/wandb2numpy/wandb_data/metaworld_bbrl_prodmp")
+    #
     # draw the performance profile
-    # draw_peformance_profile(is_success)
+    draw_peformance_profile(is_success)
 
     # draw the iqm curve
     reshaped_is_success = np.reshape(is_success, (-1, is_success.shape[-1]))
     reshaped_simulation_steps = np.reshape(simulation_steps,
                                            (-1, simulation_steps.shape[-1]))
-    # draw_metaworld_iqm(reshaped_is_success, reshaped_simulation_steps, "bbrl_prodmp")
+    draw_metaworld_iqm(reshaped_is_success, reshaped_simulation_steps, "bbrl_prodmp")
 
     # draw the ep_reward iqm curve
-    reshaped_ep_reward = np.reshape(ep_reward, (-1, ep_reward.shape[-1]))
-    draw_ep_reward_iqm(reshaped_ep_reward, reshaped_simulation_steps,
-                       "bbrl_prodmp")
+    # reshaped_ep_reward = np.reshape(ep_reward, (-1, ep_reward.shape[-1]))
+    # draw_ep_reward_iqm(reshaped_ep_reward, reshaped_simulation_steps,
+    #                    "bbrl_prodmp")

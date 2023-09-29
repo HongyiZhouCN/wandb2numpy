@@ -11,9 +11,9 @@ experiment1:
   project: table_tennis_4d_bbrl
 
 
-  config:
-    sampler.args.env_id:
-      values: [ "TableTennis4DProDMP-v0" ]
-  #  groups: ["BBRL, new bp reward setting"]
-  groups: [ "bbrl ProDMP 20 seeds 300 length ep without truncate after landing 0.69, 0.48" ]
+#  config:
+#    sampler.args.env_id:
+#      values: [ "TableTennis4DProDMP-v0" ]
+
+  groups: [ "bbrl std, final, 20 seeds" ]
   output_path: /home/lige/Codes/wandb2numpy/wandb_data/table_tennis_bbrl_prodmp
