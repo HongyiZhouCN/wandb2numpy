@@ -58,7 +58,7 @@ def read_box_dense_world_data(data_path):
     return is_success_array, simulation_steps_array
 
 
-def draw_box_pushing_iqm(is_success, simulation_steps, algorithm, method, case, num_sel):
+def draw_box_pushing_iqm(is_success, simulation_steps, algorithm, method, case):
     fig, ax = plt.subplots(ncols=1, figsize=(7, 5))
     num_frame = 50
     frames = np.floor(np.linspace(1, is_success.shape[-1], num_frame)).astype(int) - 1
@@ -78,20 +78,20 @@ def draw_box_pushing_iqm(is_success, simulation_steps, algorithm, method, case, 
     #                                         xlabel="Iteration", ylabel="IQM")
     # plt.show()
     tikzplotlib.get_tikz_code(figure=fig)
-    tikzplotlib.save(f"box_{case}_{method}_{num_sel}_iqm.tex")
+    tikzplotlib.save(f"box_{case}_{method}_iqm.tex")
 
 
 if __name__ == "__main__":
     # method = "bbrl"
     method = "tcp"
-    case = "sparse"
-    # case = "temporal_sparse"
-    for num_sel in [2, 5, 10, 25, 50, 100]:
-        is_success, simulation_steps = read_box_dense_world_data(f"/home/lige/Codes/wandb2numpy/wandb_data/box_{case}_{method}_prodmp{num_sel}")
+    # case = "dense"
+    case = "temporal_sparse"
 
-        # draw the iqm curve
-        reshaped_is_success = np.reshape(is_success, (-1, is_success.shape[-1]))
-        smooth_reshaped_is_success = util.smooth(reshaped_is_success, 0.5)
-        reshaped_simulation_steps = np.reshape(simulation_steps, (-1, simulation_steps.shape[-1]))
-        # draw_box_pushing_iqm(reshaped_is_success, reshaped_simulation_steps, None)
-        draw_box_pushing_iqm(smooth_reshaped_is_success, reshaped_simulation_steps, None, method, case, num_sel)
+    is_success, simulation_steps = read_box_dense_world_data(f"/home/lige/Codes/wandb2numpy/wandb_data/box_{case}_{method}_prodmp")
+
+    # draw the iqm curve
+    reshaped_is_success = np.reshape(is_success, (-1, is_success.shape[-1]))
+    smooth_reshaped_is_success = util.smooth(reshaped_is_success, 0.5)
+    reshaped_simulation_steps = np.reshape(simulation_steps, (-1, simulation_steps.shape[-1]))
+    # draw_box_pushing_iqm(reshaped_is_success, reshaped_simulation_steps, None)
+    draw_box_pushing_iqm(smooth_reshaped_is_success, reshaped_simulation_steps, None, method, case)

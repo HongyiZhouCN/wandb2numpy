@@ -7,13 +7,14 @@ experiment1:
 
   project: box_random_tcp_entire
 
-  config:
-    sampler.args.time_pairs_config.num_select:
-#      values: [2]
-#      values: [5]
-#      values: [10]
-#      values: [25]
-#      values: [50]
-      values: [100]
-  groups: ["TCP, dense, ablation, num_sel"]
-  output_path: /home/lige/Codes/wandb2numpy/wandb_data/box_dense_tcp_prodmp100
+#  config:
+#    sampler.args.time_pairs_config.num_select:
+##      values: [2]
+##      values: [5]
+##      values: [10]
+##      values: [25]
+##      values: [50]
+#      values: [100]
+  groups: ["TCP PPO 0.05, dense, first try"]
+
+  output_path: /home/lige/Codes/wandb2numpy/wandb_data/box_dense_tcp_ppo
