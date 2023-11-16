@@ -3,15 +3,17 @@
 
 experiment1:
 
-#  fields: ["evaluation_max_height_mean"]
+  fields: ["evaluation_max_height_mean"]
   fields: ["evaluation_goal_dist_mean"]
-#  fields: ["evaluation_episode_reward_mean"]
-#  fields: ["num_global_steps"]
+  fields: ["evaluation_episode_reward_mean"]
+  fields: ["num_global_steps"]
+  fields: ["evaluation_goal_dist_mean"]
   entity: gelikit
   project: hopper_jump_tcp
 
   config:
     policy.args.variance_net_args.std_only:
       values: [false]
-  groups: ["Sparse, remove cost after left floor, 20seeds, cpu"]
+#  groups: ["Sparse, remove cost after left floor, 20seeds, cpu"]
+  groups: ["Hopper jump Sparse, lr 1e-4, 1e-4, with control cost"]
   output_path: /home/lige/Codes/wandb2numpy/wandb_data/hopper_jump_tcp

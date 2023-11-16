@@ -17,4 +17,4 @@ experiment1:
 #      values: [100]
   groups: ["TCP PPO 0.05, dense, first try"]
 
-  output_path: /home/lige/Codes/wandb2numpy/wandb_data/box_dense_tcp_ppo
+  output_path: /home/lige/Codes/wandb2numpy/wandb_data/box_dense_tcp_prodmp
