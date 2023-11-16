@@ -26,12 +26,12 @@ def read_box_dense_world_data(data_path):
 
     for subdict in subdict_list:
         # subdict = subdict + "/experiment1"
-        if "evaluation_is_success_mean.npy" in os.listdir(subdict):
-            is_success_path = subdict + "/evaluation_is_success_mean.npy"
+        if "evaluation_is_success.npy" in os.listdir(subdict):
+            is_success_path = subdict + "/evaluation_is_success.npy"
             is_success = np.load(is_success_path)
             is_success_list.append(is_success)
-        if "num_global_steps.npy" in os.listdir(subdict):
-            simulation_steps_path = subdict + "/num_global_steps.npy"
+        if "simulation_steps.npy" in os.listdir(subdict):
+            simulation_steps_path = subdict + "/simulation_steps.npy"
             simulation_steps = np.load(simulation_steps_path)
             global_steps_list.append(simulation_steps)
 
@@ -76,12 +76,12 @@ def draw_box_pushing_iqm(is_success, simulation_steps, algorithm):
     #                                         iqm_scores, iqm_cis,
     #                                         algorithms=[algorithm],
     #                                         xlabel="Iteration", ylabel="IQM")
-    # plt.show()
     tikzplotlib.get_tikz_code(figure=fig)
     # tikzplotlib.save("box_dense_bbrl_iqm.tex")
     # tikzplotlib.save("box_dense_tcp_iqm.tex")
     # tikzplotlib.save("box_t_sparse_bbrl_iqm.tex")
-    tikzplotlib.save("box_t_sparse_tcp_iqm.tex")
+    tikzplotlib.save("rand2randBP_sparse_ppo_iqm.tex")
+    plt.show()
 
 
 if __name__ == "__main__":
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     # BBRL T Sparse
     # is_success, simulation_steps = read_box_dense_world_data("/home/lige/Codes/wandb2numpy/wandb_data/box_temporal_sparse_bbrl_prodmp")
     # TCP T Sparse
-    is_success, simulation_steps = read_box_dense_world_data("/home/lige/Codes/wandb2numpy/wandb_data/box_temporal_sparse_tcp_prodmp")
+    is_success, simulation_steps = read_box_dense_world_data("/home/hongyi/Codes/bruce_iclr/wandb2numpy/wandb_data/rand2randBPsparse_ppo_20seeds")
 
     # draw the iqm curve
     reshaped_is_success = np.reshape(is_success, (-1, is_success.shape[-1]))

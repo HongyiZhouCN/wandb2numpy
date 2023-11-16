@@ -1,0 +1,20 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+  fields: [
+            "evaluation_mean",
+            "simulation_steps",
+            "evaluation_is_success",
+            "evaluation_hit_ball"
+  ]
+  entity: ge_li_kit
+  project: ICLR_TT_RandInit_Step_Baselines
+
+
+  config:
+    environment.env_id:
+      values: [ "TableTennisRndRobot-v0" ]
+
+  groups: ["TTrandinit_trpl_best_20seeds"]
+  output_path: /home/hongyi/Codes/bruce_iclr/wandb2numpy/wandb_data/TTrandInit_trpl_20seeds

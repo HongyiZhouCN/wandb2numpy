@@ -5,7 +5,7 @@ from wandb2numpy.save_experiment import create_output_dirs, save_matrix
 
 if __name__=="__main__":
     # BBRL
-    default_config = "/home/lige/Codes/wandb2numpy/example_configs/table_tennis_bbrl.yaml"
+    default_config = "/home/hongyi/Codes/bruce_iclr/wandb2numpy/example_configs/hopper_bbrl.yaml"
 
     # TCP
     # default_config = "/home/lige/Codes/wandb2numpy/example_configs/table_tennis_tcp.yaml"

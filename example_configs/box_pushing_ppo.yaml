@@ -1,0 +1,18 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+  fields: [
+            "simulation_steps",
+            "evaluation_is_success",
+  ]
+  entity: ge_li_kit
+  project: ICLR_BP_Rand2Rand_Step_Baselines
+
+
+  config:
+    environment.env_id:
+      values: ["BoxPushingRandomInitTemporalSparse-v0"]
+  #  groups: ["BBRL, new bp reward setting"]
+  groups: ["BPrand2randTS_trpl_gridbest_48000samples1024batch_20seeds"]
+  output_path: /home/hongyi/Codes/bruce_iclr/wandb2numpy/wandb_data/rand2randBPsparse_trpl_20seeds

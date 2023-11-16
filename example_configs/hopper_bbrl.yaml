@@ -1,0 +1,20 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+  fields: [
+            "evaluation_mean",
+            "simulation_steps",
+            "evaluation_max_height",
+            "evaluation_goal_dist"
+  ]
+  entity: ge_li_kit
+  project: SAC_HopperJump_Grid
+
+
+  config:
+    environment.env_id:
+      values: ["HopperJumpSparse-v0"]
+
+  groups: ["cw2_sac_white_pinknoisebest_HPs_20seeds"]
+  output_path: /home/hongyi/Codes/bruce_iclr/wandb2numpy/wandb_data/hopper_sac_20seeds

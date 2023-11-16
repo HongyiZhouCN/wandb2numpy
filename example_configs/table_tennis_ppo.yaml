@@ -1,0 +1,20 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+  fields: [
+            "evaluation_mean",
+            "simulation_steps",
+            "evaluation_is_success",
+            "evaluation_hit_ball"
+  ]
+  entity: ge_li_kit
+  project: PPO_Markovian_TT
+
+
+  config:
+    out_dir:
+      values: [ "results/ppo/table_tennis/ppo_table_tennis_20seeds" ]
+  #  groups: ["BBRL, new bp reward setting"]
+#  groups: [ ]
+  output_path: /home/hongyi/Codes/bruce_iclr/wandb2numpy/wandb_data/table_tennis_ppo_20seeds
