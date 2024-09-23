@@ -83,11 +83,11 @@ def draw_box_pushing_iqm(is_success, simulation_steps, algorithm, method, case):
 
 if __name__ == "__main__":
     # method = "bbrl"
-    method = "tcp"
-    case = "dense"
-    # case = "temporal_sparse"
+    method = "seq"
+    # case = "dense"
+    case = "sparse"
 
-    is_success, simulation_steps = read_box_dense_world_data(f"/home/lige/Codes/wandb2numpy/wandb_data/box_{case}_{method}_prodmp")
+    is_success, simulation_steps = read_box_dense_world_data(f"/home/lige/Codes/seq_rl/wandb2numpy/wandb_data/box_{case}_{method}")
 
     # draw the iqm curve
     reshaped_is_success = np.reshape(is_success, (-1, is_success.shape[-1]))

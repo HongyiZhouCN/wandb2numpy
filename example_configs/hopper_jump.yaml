@@ -3,17 +3,21 @@
 
 experiment1:
 
-  fields: ["evaluation_max_height_mean"]
-  fields: ["evaluation_goal_dist_mean"]
-  fields: ["evaluation_episode_reward_mean"]
-  fields: ["num_global_steps"]
-  fields: ["evaluation_goal_dist_mean"]
+  fields: [ "evaluation_max_height_mean",
+            "evaluation_goal_dist_mean",
+            "evaluation_episode_reward_mean",
+            "num_global_steps",
+            "evaluation_goal_dist_mean" ]
+#  fields: ["evaluation_goal_dist_mean"]
+#  fields: ["evaluation_episode_reward_mean"]
+#  fields: ["num_global_steps"]
+#  fields: ["evaluation_goal_dist_mean"]
   entity: gelikit
-  project: hopper_jump_tcp
+  project: hopper_seq_entire
 
-  config:
-    policy.args.variance_net_args.std_only:
-      values: [false]
+#  config:
+#    policy.args.variance_net_args.std_only:
+#      values: [false]
 #  groups: ["Sparse, remove cost after left floor, 20seeds, cpu"]
-  groups: ["Hopper jump Sparse, lr 1e-4, 1e-4, with control cost"]
-  output_path: /home/lige/Codes/wandb2numpy/wandb_data/hopper_jump_tcp
+  groups: ["Hopper, final, single q, polyak, c_ep20, p_ep10"]
+  output_path: /home/lige/Codes/seq_rl/wandb2numpy/wandb_data/hopper_jump_seq

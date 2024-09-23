@@ -88,7 +88,7 @@ def draw_hopper_iqm(profile_name, profile, simulation_steps, algorithm):
 
 if __name__ == "__main__":
     height, goal_distance, reward, simulation_steps = read_hopper_jump(
-        f"/home/lige/Codes/wandb2numpy/wandb_data/hopper_jump_tcp")
+        f"/home/lige/Codes/seq_rl/wandb2numpy/wandb_data/hopper_jump_seq")
 
     reshaped_height = np.reshape(height, (-1, height.shape[-1]))
     reshaped_goal_distance = np.reshape(goal_distance, (-1, goal_distance.shape[-1]))
@@ -102,28 +102,3 @@ if __name__ == "__main__":
     # Fixme, smoothness has been removed
     for key, profile in profile_dict.items():
         draw_hopper_iqm(key, profile, reshaped_simulation_steps, None)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,7 +5,7 @@ from wandb2numpy.save_experiment import create_output_dirs, save_matrix
 
 if __name__=="__main__":
 
-    default_config = f"/home/lige/Codes/wandb2numpy/example_configs/hopper_jump.yaml"
+    default_config = f"/home/lige/Codes/seq_rl/wandb2numpy/example_configs/hopper_jump.yaml"
 
     list_doc = load_config(default_config)
     experiment_data_dict, config_list = export_data(list_doc)
