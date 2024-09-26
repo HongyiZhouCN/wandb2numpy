@@ -94,4 +94,6 @@ if __name__ == "__main__":
     smooth_reshaped_is_success = util.smooth(reshaped_is_success, 0.5)
     reshaped_simulation_steps = np.reshape(simulation_steps, (-1, simulation_steps.shape[-1]))
     # draw_box_pushing_iqm(reshaped_is_success, reshaped_simulation_steps, None)
-    draw_box_pushing_iqm(smooth_reshaped_is_success, reshaped_simulation_steps, None, method, case)
+    down_sample = 10
+    draw_box_pushing_iqm(smooth_reshaped_is_success[:, ::down_sample],
+                         reshaped_simulation_steps[:, ::down_sample], None, method, case)

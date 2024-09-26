@@ -15,6 +15,13 @@ experiment1:
 #      values: [25]
 #      values: [50]
 #      values: [100]
-  groups: ["sparse, final, EP30/15, LR 5e-5/3e-4"]
+#  groups: ["sparse, final, EP30/15, LR 5e-5/3e-4"] # Default group name
+#  groups: ["sparse, ablation, rand double Q"] # Ensemble
+#  groups: ["sparse, ablation, clipped double Q"] # Clipped
+#  groups: ["sparse, ablation, use q-func, bat 192"] # Use Q TARGET
+#  groups: ["sparse, ablation, segments 25"] # 25 Segments
+#  groups: ["sparse, ablation, dropout 0.05"] # Dropout
+#  groups: [ "sparse, ablation, no LayerNorm" ] # NO LAYERNORM
+  groups: ["sparse, ablation, no TRPL"] # fixme, no TRPL
 
   output_path: /home/lige/Codes/seq_rl/wandb2numpy/wandb_data/box_sparse_seq

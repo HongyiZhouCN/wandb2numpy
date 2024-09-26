@@ -57,8 +57,9 @@ def read_hopper_jump(data_path):
     simulation_steps_array = np.swapaxes(simulation_steps_array, 0, 1)
 
     # Adjust the length of the array
-    raise NotImplementedError  # This enforces a stop. Remove this line when you implement the length! below.
-    return height_array[..., :30], goal_distance_array[..., :30], reward_array[..., :30], simulation_steps_array[..., :30]
+    # raise NotImplementedError  # This enforces a stop. Remove this line when you implement the length! below.
+    log_length = 150
+    return height_array[..., :log_length], goal_distance_array[..., :log_length], reward_array[..., :log_length], simulation_steps_array[..., :log_length]
 
 
 def draw_hopper_iqm(profile_name, profile, simulation_steps, algorithm):
@@ -81,9 +82,9 @@ def draw_hopper_iqm(profile_name, profile, simulation_steps, algorithm):
                                             iqm_scores, iqm_cis,
                                             algorithms=[algorithm],
                                             xlabel="Iteration", ylabel="IQM")
-    plt.show()
-    # tikzplotlib.get_tikz_code()
-    # tikzplotlib.save(f"hopper_jump_{profile_name}_iqm.tex")
+    # plt.show()
+    tikzplotlib.get_tikz_code()
+    tikzplotlib.save(f"hopper_jump_{profile_name}_iqm.tex")
 
 
 if __name__ == "__main__":
