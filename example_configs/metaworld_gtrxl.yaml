@@ -1,0 +1,16 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+  fields: ["success_mean", "num_env_steps_trained", "evaluate_episode_reward"]
+  entity: geli-bruce-ai
+#  project: metaworld_bbrl_entire
+  project: ICLR25_PPO-ATTENTION_Metaworld
+
+  config:
+    environment.env_id:
+          values: ["AssemblyProDMPTCP-v2"]
+
+#  TCP
+  groups: ["Metaworld_50job_8seeds_newWorkSpace"]
+  output_path: /home/hongyi/Codes/bruce_iclr25/wandb2numpy/wandb_data/metaworld_gtrxl
