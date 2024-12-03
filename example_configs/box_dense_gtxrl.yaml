@@ -1,0 +1,28 @@
+# This is the minimal working config. Because not specified otherwise, all runs in the project
+# that include the field "test_acc" will be exported as a numpy array to the directory "wandb_data".
+
+experiment1:
+  fields: ["evaluation_is_success_mean", "num_global_steps"]
+  entity: gelikit
+
+  project: box_random_seq_entire
+
+#  config:
+#    sampler.args.time_pairs_config.num_select:
+##      values: [2]
+##      values: [5]
+##      values: [10]
+##      values: [25]
+##      values: [50]
+#      values: [100]
+#  groups: ["dense, final, EP30/15, single Q"] # Default group name
+#  groups: ["dense, ablation, rand double Q"] # Ensemble
+#  groups: ["dense, ablation, clipped double Q"] # Clipped
+#  groups: ["dense, ablation, use q-func, bat192"] # Use Q TARGET
+#  groups: ["dense, ablation, segments 25"] # 25 Segments
+#  groups: ["dense, ablation, dropout 0.05"] # Dropout
+#  groups: ["dense, ablation, no LayerNorm"] # NO LAYERNORM
+  groups: ["dense, ablation, no TRPL"] # fixme, no TRPL
+
+
+  output_path: /home/lige/Codes/seq_rl/wandb2numpy/wandb_data/box_dense_seq
